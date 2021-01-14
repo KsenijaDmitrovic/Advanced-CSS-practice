@@ -23,6 +23,8 @@
             background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
 
             animation: rainbow-circle 1s linear infinite;
+            filter: drop-shadow(5px 5px 1px #fb5dad, #55fb9f, #b97aff);
+            filter: brightness(2px);
 
         }
 
@@ -55,12 +57,27 @@
         .inner-circle::before {
             content: "hi";
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 250px;
             animation: circle 1s linear infinite;
-            background-color: cyan;
+            background-color: #050210.;
+            border-radius: 50%;
+        }
 
+        @keyframes circle {
+
+            0% {
+                transform: scale(0);
+            }
+
+            0% {
+                background-color: #030405;
+            }
+
+            70% {
+                background-color: #646570
+            }
+        }
         }
     </style>
 </head>
