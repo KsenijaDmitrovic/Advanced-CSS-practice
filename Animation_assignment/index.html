@@ -8,41 +8,25 @@
 
     <style>
         body {
-
             background-color: #050210;
         }
 
         #outer-circle {
-
             width: 300px;
             height: 300px;
             margin: 50px auto;
-            border: 1px solid;
             position: relative;
             border-radius: 50%;
+
+            animation: rainbow-circle 1s linear infinite ;
+
             background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            box-shadow: 0 0 50px 4px rgba(255, 255, 255, 0.808);
 
-            animation: rainbow-circle 1s linear infinite;
-            filter: drop-shadow(5px 5px 1px #fb5dad, #55fb9f, #b97aff);
-            filter: brightness(2px);
-
+            filter: brightness(130%);
+            filter: opacity(0.9) ;
         }
-
-        .inner-circle {
-            width: 250px;
-            height: 250px;
-            border: 1px solid;
-            border-radius: 50%;
-            background-color: #050210;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-        }
-
-
-
+        
         @keyframes rainbow-circle {
 
             0% {
@@ -54,14 +38,27 @@
             }
         }
 
-        .inner-circle::before {
-            content: "";
-            position: absolute;
+
+        .inner-circle {
             width: 250px;
             height: 250px;
-            animation: circle 1s linear infinite;
-            background-color: #050210;
+            position: absolute;
             border-radius: 50%;
+            background-color: #050210;            
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }      
+
+        .inner-circle::before {
+            content: "";            
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: #1f1a36cc;
+
+            animation: circle 1s ease-in-out infinite running;
         }
 
         @keyframes circle {
@@ -71,14 +68,17 @@
             }
 
             0% {
-                background-color: #030405;
+                background-color: #1c2950;
             }
 
-            70% {
-                background-color: #646570
+            45% {
+                background-color: #18183f;
+            }
+
+            90% {
+                background-color: #0b0b1d;
             }
         }
-        
     </style>
 </head>
 
